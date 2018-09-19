@@ -8,19 +8,22 @@
 //     // Implemente essa funcao para resolver a questao 1.
 // }
 
+int my_atoi(char c);
+
 int main() {    
     // Le a entrada e calcula e retorna o resultado.
     Stack* stack = init_stack();
     char c;
     while((c = getc(stdin)) != EOF){
-        if(isdigit(c))
-            push(stack, atoi(c));
+        if(isdigit(c)){
+            push(stack, my_atoi(c));
+        }
         else
-            if(!strcmp(c, "*")){
+            if(c == '*'){
                 int value = pop(stack) * pop(stack);
                 push(stack, value);
             }
-            if(!strcmp(c, "+")){
+            if(c == '+'){
                 int value = pop(stack) + pop(stack);
                 push(stack, value);
             }
@@ -29,4 +32,10 @@ int main() {
     // int res = calc();
     // Exibe a saida.
     printf("%d\n", pop(stack));
+}
+
+int my_atoi(char c){
+	if(c >=48 && c <= 57)
+    return c-48;
+  return 0;
 }
