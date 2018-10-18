@@ -21,6 +21,7 @@
 struct pq {
     Event* events;
     int size;
+    int max;
 }
 /*
  * Cria uma nova fila de prioridade mínima com o limite de elementos informado.
@@ -29,7 +30,8 @@ PQ* PQ_create(int max_N) {
     // TODO: Implemente a criação da fila que suporta no máximo o número de
     //       de eventos informados no parâmetro.
     PQ* pq = malloc(sizeof(pq));
-    pq->events = malloc(max_N+1 * sizeof(Event));
+    pq->max = max_N;
+    pq->events = malloc(pq->max + 1 * sizeof(Event));
     pq->size = 0;
     return pq;
 }
@@ -58,7 +60,13 @@ void PQ_insert(PQ *pq, Event *e) {
     //       em uma fila que já contém o número máximo de eventos) para evitar
     //       dores de cabeça com acessos inválidos na memória.
     if(PQ_size(pq) < pq->max){
-
+        pq->events[++pq->size];
+        while(pq->size > 1 && compare(pq->events[(pq->size)/2],pq->events[pq->size])){
+            Event* e = pq->events[(pq->size)/2]; //guarda evento em variavel auxiliar
+            pq->events[(pq->size)/2] = pq->events[(pq->size)]; //troca k/2 para k
+            pq->events[(pq->size)] = e; //usa auxiliar para concluir a troca
+            //pq->size = pq->size/2; /porem isso gera a necessidade de alteração do código.
+        }
     }
 }
 
@@ -82,5 +90,5 @@ bool PQ_is_empty(PQ *pq) {
  */
 int PQ_size(PQ *pq) {
     // TODO: Implemente essa função.
-    return pq.size;
+    return pq->size;
 }
