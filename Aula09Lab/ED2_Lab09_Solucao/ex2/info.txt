@@ -1,0 +1,16 @@
+ITER     UNBALANCED HEIGHT        BALANCED HEIGHT
+0        49                       19
+1        48                       19
+2        47                       19
+3        48                       19
+4        46                       19
+5        47                       19
+6        53                       19
+7        49                       19
+8        48                       19
+9        54                       19
+-----------------
+BALANCED HEIGHT SHOULD BE: 19
+
+Análise: Conforme esperado, a árvore fica perfeitamente balanceada após a
+operação de balanceamento.

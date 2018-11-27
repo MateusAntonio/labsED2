@@ -1,0 +1,17 @@
+ITER     HEIGHT
+0        45
+1        51
+2        50
+3        48
+4        46
+5        51
+6        52
+7        47
+8        47
+9        47
+-----------------
+MEAN: 48.40
+
+Análise: A inserção na raiz tem o mesmo comportamento que a inserção nas folhas
+com relação à altura da árvore para uma entrada aleatória. A média obtida no
+Exercício 0 foi 48.20.

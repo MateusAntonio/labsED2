@@ -1,0 +1,38 @@
+Execução para entrada aleatória:
+
+ITER     HEIGHT
+0        48
+1        51
+2        49
+3        48
+4        47
+5        46
+6        47
+7        50
+8        54
+9        46
+-----------------
+MEAN: 48.60
+
+Execução para inserção ordenada das chaves: 0 .. N-1 :
+
+ITER     HEIGHT
+0        81
+1        82
+2        81
+3        89
+4        81
+5        97
+6        76
+7        82
+8        78
+9        77
+-----------------
+MEAN: 82.40
+
+Análise: A BST randomizada tem uma altura quase duas vezes maior que a BST
+construída com uma entrada aleatória. No entanto, a grande vantagem da BST
+randomizada é ser insensível à ordenação da entrada: a árvore fica
+razoavelmente balanceada mesmo quando a entrada é ordenada. Isso permite que a
+estrutura seja usada mesmo quando não é possível randomizar a entrada toda
+antes das inserções.

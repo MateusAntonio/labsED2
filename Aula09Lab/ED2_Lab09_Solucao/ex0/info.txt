@@ -1,0 +1,19 @@
+ITER    HEIGHT
+0       47
+1       47
+2       47
+3       52
+4       46
+5       48
+6       50
+7       47
+8       51
+9       47
+-----------------
+MEAN: 48.20
+
+Análise: A melhor altura possível para a árvore seria log2(10^6) ~= 19.93 caso
+a árvore ficasse totalmente balanceada. O resultado teórico obtido por Reed
+para a altura da árvore com uma entrada aleatória é
+4,311 * (ln 10^6) ~= 59.559. A altura média obtida experimentalmente está entre
+esses dois valores extremos, como esperado.
